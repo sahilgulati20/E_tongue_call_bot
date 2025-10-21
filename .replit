@@ -1,0 +1,16 @@
+modules = ["nodejs-20"]
+run = "node index.js"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "node index.js"]
+
+[agent]
+expertMode = true
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+exposeLocalhost = true
